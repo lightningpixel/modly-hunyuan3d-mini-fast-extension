@@ -63,7 +63,8 @@ def setup(python_exe: str, ext_dir: Path, gpu_sm: int) -> None:
         "opencv-python-headless",
         "huggingface_hub",
         "diffusers>=0.31.0",
-        "transformers>=4.46.0",
+        # Hunyuan3D's DINOv2 checkpoint uses the pre-v5 query/key/value key layout.
+        "transformers>=4.46.0,<5.0.0",
         "accelerate",
         "einops",
         "scipy",
